@@ -1,0 +1,49 @@
+.mainImage {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  height: 800px;
+  background-image: url("../../assets/images/clothes-store.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mainContainer {
+  width: 1300px;
+  margin-top: 10rem;
+}
+
+.description {
+  font-size: 1.5rem;
+}
+
+.imageBtn {
+  background-color: transparent;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 100px;
+}
+
+.imageBtn:hover {
+  border: solid 0.2rem white;
+}
+
+.aboutDiv {
+  position: relative;
+  height: 100px;
+}
+.aboutTitle {
+  margin-top: 7rem;
+  font-size: 1.5rem;
+}
+.aboutInfo {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  margin-top: 3rem;
+  width: 52ch;
+  font-size: 1.2rem;
+}

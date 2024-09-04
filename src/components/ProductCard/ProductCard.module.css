@@ -1,0 +1,40 @@
+.productCard {
+  border: 0.2rem solid white;
+  width: 400px;
+  height: 570px;
+}
+
+.imgBtn {
+  margin-top: 1.5em;
+  width: 350px;
+  height: 350px;
+}
+
+.productImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.productLink {
+  display: block;
+}
+
+.addBtn {
+  height: 2.5rem;
+  color: black;
+}
+
+.options {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.optionsInput {
+  /* padding-top: 1em; */
+  height: 2rem;
+}
+
+/* before edit  */
