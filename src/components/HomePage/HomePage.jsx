@@ -1,36 +1,42 @@
-import { useState, useEffect } from "react";
 import NavBar from "../NavBar/NavBar";
-import ProductsPage from "../ProductsPage/ProductsPage";
-import ErrorPage from "../ErrorPage/ErrorPage";
+// import clothesImage from "../../assets/images/clothes-store.jpg";
+import classes from "./HomePage.module.css";
+import { useNavigate } from "react-router-dom";
+
 export default function HomePage() {
-  const [products, setProducts] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error();
-        }
-        return response.json();
-      })
-      .then((data) => setProducts(() => data))
-      .catch((error) => {
-        setError(error);
-        console.error(error);
-      })
-      .finally(() => setLoading((loading) => !loading));
-  }, []);
-
-  if (!loading) {
-    console.log(products);
+  function handleClick(e) {
+    e.preventDefault();
+    navigate("/products/all");
   }
-
   return (
     <div>
-      <NavBar></NavBar>
-      <p>HomePage</p>
+      <header>
+        <h1>E-Commerce</h1>
+        <NavBar></NavBar>
+      </header>
+      <div className={classes.mainContainer}>
+        <p className={classes.description}>
+          Your one stop shop for clothes electronics & jewelry
+        </p>
+        <div className={classes.mainImage}>
+          <button onClick={handleClick} className={classes.imageBtn}>
+            View Products
+          </button>
+        </div>
+        <div className={classes.aboutDiv}>
+          <h4 className={classes.aboutTitle}>About us</h4>
+          <p className={classes.aboutInfo}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            feugiat finibus facilisis. Curabitur ornare nisi magna. Phasellus
+            varius tortor erat. Cras sed egestas nulla. Praesent eu convallis
+            lorem, a porta leo. Nulla facilisi. Quisque finibus fermentum
+            aliquet. Pellentesque a sagittis leo, feugiat faucibus orci.
+            Suspendisse eget tellus a quam tempor.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
